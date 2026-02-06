@@ -75,16 +75,16 @@ const translations = {
     contact: {
       title: "Kontakta oss",
       subtitle: "Boka en visning eller ställ dina frågor",
-      agent: "Ansvarig fastighetsmäklare",
-      name: "Albin Sköld",
+      agent: "Ägare",
+      name: "Raymond Tress",
       office: "Mäklarhuset Vetlanda",
-      address: "Storgatan 7 D, 574 32 Vetlanda",
+      address: "Malmvägen 1. 57 454 Holsbybrunn",
       phone: "Telefon",
-      phoneVal: "0383-180 93",
+      phoneVal: "+46 767763600",
       mobile: "Mobil",
       mobileVal: "070-971 28 64",
       email: "E-post",
-      emailVal: "albin.skold@maklarhuset.se",
+      emailVal: "raytress@me.com",
       bookBtn: "Boka visning",
       formName: "Ditt namn",
       formEmail: "Din e-post",
@@ -93,7 +93,7 @@ const translations = {
     },
     footer: {
       rights: "Alla rättigheter förbehållna",
-      broker: "Förmedlas av Mäklarhuset"
+      broker: "Vi ser fram emot ditt erbjudande"
     }
   },
   de: {
@@ -172,16 +172,16 @@ const translations = {
     contact: {
       title: "Kontaktieren Sie uns",
       subtitle: "Buchen Sie eine Besichtigung oder stellen Sie Ihre Fragen",
-      agent: "Verantwortlicher Makler",
-      name: "Albin Sköld",
+      agent: "Eigentümer",
+      name: "Raymond Tress",
       office: "Mäklarhuset Vetlanda",
-      address: "Storgatan 7 D, 574 32 Vetlanda",
+      address: "Malmvägen 1. 57 454 Holsbybrunn",
       phone: "Telefon",
-      phoneVal: "0383-180 93",
+      phoneVal: "+46 767763600",
       mobile: "Handy",
       mobileVal: "070-971 28 64",
       email: "E-Mail",
-      emailVal: "albin.skold@maklarhuset.se",
+      emailVal: "raytress@me.com",
       bookBtn: "Besichtigung buchen",
       formName: "Ihr Name",
       formEmail: "Ihre E-Mail",
@@ -190,7 +190,7 @@ const translations = {
     },
     footer: {
       rights: "Alle Rechte vorbehalten",
-      broker: "Vermittelt von Mäklarhuset"
+      broker: "Wir freuen uns auf Ihr Angebot"
     }
   },
   nl: {
@@ -269,16 +269,16 @@ const translations = {
     contact: {
       title: "Neem Contact Met Ons Op",
       subtitle: "Boek een bezichtiging of stel uw vragen",
-      agent: "Verantwoordelijke makelaar",
-      name: "Albin Sköld",
+      agent: "Eigenaar",
+      name: "Raymond Tress",
       office: "Mäklarhuset Vetlanda",
-      address: "Storgatan 7 D, 574 32 Vetlanda",
+      address: "Malmvägen 1. 57 454 Holsbybrunn",
       phone: "Telefoon",
-      phoneVal: "0383-180 93",
+      phoneVal: "+46 767763600",
       mobile: "Mobiel",
       mobileVal: "070-971 28 64",
       email: "E-mail",
-      emailVal: "albin.skold@maklarhuset.se",
+      emailVal: "raytress@me.com",
       bookBtn: "Bezichtiging boeken",
       formName: "Uw naam",
       formEmail: "Uw e-mailadres",
@@ -287,7 +287,7 @@ const translations = {
     },
     footer: {
       rights: "Alle rechten voorbehouden",
-      broker: "Bemiddeld door Mäklarhuset"
+      broker: "We kijken uit naar uw aanbod"
     }
   },
   en: {
@@ -366,16 +366,16 @@ const translations = {
     contact: {
       title: "Contact Us",
       subtitle: "Book a viewing or ask your questions",
-      agent: "Responsible Broker",
-      name: "Albin Sköld",
+      agent: "Owner",
+      name: "Raymond Tress",
       office: "Mäklarhuset Vetlanda",
-      address: "Storgatan 7 D, 574 32 Vetlanda",
+      address: "Malmvägen 1. 57 454 Holsbybrunn",
       phone: "Phone",
-      phoneVal: "0383-180 93",
+      phoneVal: "+46 767763600",
       mobile: "Mobile",
       mobileVal: "070-971 28 64",
       email: "Email",
-      emailVal: "albin.skold@maklarhuset.se",
+      emailVal: "raytress@me.com",
       bookBtn: "Book a Viewing",
       formName: "Your Name",
       formEmail: "Your Email",
@@ -384,7 +384,7 @@ const translations = {
     },
     footer: {
       rights: "All Rights Reserved",
-      broker: "Brokered by Mäklarhuset"
+      broker: "We look forward to your offer"
     }
   }
 };
