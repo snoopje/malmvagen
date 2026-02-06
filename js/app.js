@@ -4,7 +4,7 @@
  */
 
 // Global state
-let currentLanguage = 'en';
+let currentLanguage = 'sv'; // Default to Swedish for Maklarhuset
 let isNavOpen = false;
 
 /**
@@ -13,14 +13,15 @@ let isNavOpen = false;
 
 /**
  * Detect browser language from navigator
- * Returns one of: 'sv', 'de', 'nl', or 'en' (default)
+ * Returns one of: 'sv', 'de', 'nl', or 'en'
+ * Falls back to 'sv' (Swedish) as default for this Swedish property
  */
 function detectBrowserLanguage() {
   const browserLang = navigator.language || navigator.userLanguage;
   const langPrefix = browserLang.split('-')[0].toLowerCase();
 
   const supportedLanguages = ['sv', 'de', 'nl', 'en'];
-  return supportedLanguages.includes(langPrefix) ? langPrefix : 'en';
+  return supportedLanguages.includes(langPrefix) ? langPrefix : 'sv'; // Default to 'sv' for Swedish property
 }
 
 /**
@@ -30,8 +31,8 @@ function detectBrowserLanguage() {
 function setLanguage(lang) {
   // Validate language
   if (!translations[lang]) {
-    console.warn(`Language '${lang}' not found in translations. Defaulting to 'en'.`);
-    lang = 'en';
+    console.warn(`Language '${lang}' not found in translations. Defaulting to 'sv'.`);
+    lang = 'sv'; // Default to Swedish
   }
 
   currentLanguage = lang;
@@ -39,7 +40,7 @@ function setLanguage(lang) {
   // Update HTML lang attribute
   document.documentElement.lang = lang;
 
-  // Update all elements with data-i18n attribute
+  // Update all elements with data-i18n attribute for textContent
   const translatableElements = document.querySelectorAll('[data-i18n]');
   translatableElements.forEach((element) => {
     const translationKey = element.getAttribute('data-i18n');
@@ -95,6 +96,7 @@ function getNestedTranslation(obj, path) {
 
 /**
  * Initialize intersection observer for .animate-in elements
+ * Adds .visible class when elements scroll into view
  */
 function initIntersectionObserver() {
   const observerOptions = {
@@ -120,23 +122,25 @@ function initIntersectionObserver() {
 }
 
 /**
- * Handle scroll events for navigation styling and parallax
+ * Handle scroll events for navigation styling and parallax effects
+ * - Adds .scrolled class to .site-header after scrolling past 80px
+ * - Applies parallax effect to .hero section
  */
 function initScrollEffects() {
-  const nav = document.querySelector('nav');
+  const siteHeader = document.querySelector('.site-header');
   const hero = document.querySelector('.hero');
 
   window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY;
 
-    // Add .scrolled class to nav after scrolling past 80px
+    // Add .scrolled class to header after scrolling past 80px
     if (scrollPos > 80) {
-      nav?.classList.add('scrolled');
+      siteHeader?.classList.add('scrolled');
     } else {
-      nav?.classList.remove('scrolled');
+      siteHeader?.classList.remove('scrolled');
     }
 
-    // Subtle parallax effect on hero
+    // Subtle parallax effect on hero section
     if (hero && scrollPos < 800) {
       const parallaxOffset = scrollPos * 0.5;
       hero.style.backgroundPosition = `center ${parallaxOffset}px`;
@@ -150,32 +154,35 @@ function initScrollEffects() {
 
 /**
  * Initialize mobile navigation toggle
+ * - Toggles .nav-open class on .site-header when .nav-toggle is clicked
+ * - Closes nav when a .nav-link is clicked
+ * - Closes nav when clicking outside the header
  */
 function initMobileNav() {
   const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('nav');
-  const navLinks = document.querySelectorAll('nav a');
+  const siteHeader = document.querySelector('.site-header');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   // Toggle nav on button click
   navToggle?.addEventListener('click', () => {
     isNavOpen = !isNavOpen;
-    nav?.classList.toggle('nav-open');
+    siteHeader?.classList.toggle('nav-open');
   });
 
-  // Close nav when a link is clicked
+  // Close nav when a nav link is clicked
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
       isNavOpen = false;
-      nav?.classList.remove('nav-open');
+      siteHeader?.classList.remove('nav-open');
     });
   });
 
-  // Close nav when clicking outside
+  // Close nav when clicking outside the header
   document.addEventListener('click', (e) => {
-    if (!nav?.contains(e.target) && !navToggle?.contains(e.target)) {
+    if (!siteHeader?.contains(e.target) && !navToggle?.contains(e.target)) {
       if (isNavOpen) {
         isNavOpen = false;
-        nav?.classList.remove('nav-open');
+        siteHeader?.classList.remove('nav-open');
       }
     }
   });
@@ -187,9 +194,11 @@ function initMobileNav() {
 
 /**
  * Initialize smooth scrolling for anchor links
+ * Calculates offset based on .site-header height
  */
 function initSmoothScrolling() {
-  const navHeight = document.querySelector('nav')?.offsetHeight || 80;
+  const siteHeader = document.querySelector('.site-header');
+  const navHeight = siteHeader?.offsetHeight || 80;
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
@@ -219,6 +228,7 @@ function initSmoothScrolling() {
 
 /**
  * Initialize contact form with validation and success message
+ * Finds form via #contactForm selector
  */
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
@@ -242,7 +252,7 @@ function initContactForm() {
       return;
     }
 
-    // Show success message
+    // Show success message using translation
     const successMessage =
       getNestedTranslation(translations[currentLanguage], 'contact.success') ||
       'Thank you! Your inquiry has been sent.';
@@ -282,7 +292,7 @@ function isValidEmail(email) {
  * @param {string} type - Type: 'success' or 'error'
  */
 function showNotification(message, type = 'success') {
-  // Create notification element if it doesn't exist
+  // Create notification container if it doesn't exist
   let notificationContainer = document.getElementById('notificationContainer');
   if (!notificationContainer) {
     notificationContainer = document.createElement('div');
@@ -330,6 +340,7 @@ function showNotification(message, type = 'success') {
 
 /**
  * Initialize counter animations for elements with .counter class
+ * Looks for data-target attribute on counter elements
  */
 function initCounterAnimation() {
   const counterOptions = {
@@ -354,7 +365,7 @@ function initCounterAnimation() {
 
 /**
  * Animate a counter from 0 to target value
- * @param {HTMLElement} element - Counter element
+ * @param {HTMLElement} element - Counter element with data-target attribute
  */
 function animateCounter(element) {
   const target = parseInt(element.getAttribute('data-target'), 10);
@@ -390,8 +401,8 @@ function animateCounter(element) {
 
 /**
  * Initialize hero parallax effect
- * The parallax is already handled in initScrollEffects()
- * This ensures proper initialization
+ * The parallax scroll effect is already handled in initScrollEffects()
+ * This ensures proper CSS initialization
  */
 function initHeroParallax() {
   const hero = document.querySelector('.hero');
@@ -410,11 +421,12 @@ function initHeroParallax() {
 }
 
 /**
- * CSS ANIMATIONS (for notification slides)
+ * CSS ANIMATIONS
  */
 
 /**
  * Inject animation keyframes into the document
+ * Includes slideIn/slideOut for notifications and fade transitions for i18n
  */
 function injectAnimationStyles() {
   const style = document.createElement('style');
@@ -460,6 +472,9 @@ function injectAnimationStyles() {
 
 /**
  * Initialize all features on DOM ready
+ * - Loads translations from global translations object
+ * - Detects browser language (defaults to 'sv' for Swedish)
+ * - Sets up all event listeners and observers
  */
 document.addEventListener('DOMContentLoaded', () => {
   // Check if translations are available
@@ -468,11 +483,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Detect and set initial language
+  // Detect and set initial language (defaults to 'sv')
   const detectedLang = detectBrowserLanguage();
   setLanguage(detectedLang);
 
-  // Set up language switcher
+  // Set up language switcher buttons
   const langButtons = document.querySelectorAll('.lang-btn');
   langButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -496,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * Handle language changes dynamically
- * For example, if page content is added dynamically
+ * For example, if page content is added dynamically after initialization
  */
 function reinitializeTranslations() {
   initIntersectionObserver();
@@ -505,20 +520,22 @@ function reinitializeTranslations() {
 
 /**
  * Utility: Get current language
+ * @returns {string} Current language code
  */
 function getCurrentLanguage() {
   return currentLanguage;
 }
 
 /**
- * Utility: Manually set language with reinit
+ * Utility: Manually set language with full reinitialization
+ * @param {string} lang - Language code to set
  */
 function setLanguageFully(lang) {
   setLanguage(lang);
   reinitializeTranslations();
 }
 
-// Export utilities for potential external use (though page loads via script tag)
+// Export utilities for potential external use
 window.appUtils = {
   setLanguage: setLanguageFully,
   getCurrentLanguage,
