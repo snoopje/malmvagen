@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vacker herrgård i Ädelfors. Malmvägen 1 - en klassisk villa med moderna bekvämligheter, 365 m², 9 rum och 3 gäststugor.">
+  <meta name="keywords" content="villa, Ädelfors, herrgård, bostadsförsäljning, Mäklarhuset">
+  <meta name="author" content="Mäklarhuset">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malmvägen 1, Ädelfors - Klassisk Herrgård med Moderne Bekvämligheter">
+  <meta property="og:description" content="Exklusiv herrgård på guldkusten. 365 m² med 9 rum, 4,505 m² tomt och 3 gäststugor.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Malmvagen+1">
+  <meta property="og:url" content="https://maklarhuset.se/malmvagen-1">
+
+  <meta name="theme-color" content="#E4007C">
+
+  <title>Malmvägen 1, Ädelfors | Mäklarhuset</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usznLoEa+P1M7fTv+aqUlZAqOAqM9f9esl07+1mpDU+4th+2BHme2e4KKBPcTQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --primary: #E4007C;
+      --secondary: #FFA5C8;
+      --dark: #1A1A1A;
+      --light: #F8F8F8;
+      --text: #333333;
+      --text-light: #666666;
+      --border: #EEEEEE;
+      --white: #FFFFFF;
+      --success: #4CAF50;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: var(--white);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    /* Navigation Bar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      background-color: transparent;
+    }
+
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) var(--spacing-xl);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    header.scrolled .navbar-brand {
+      color: var(--primary);
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+      list-style: none;
+    }
+
+    .navbar-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    header.scrolled .navbar-link {
+      color: var(--text);
+    }
+
+    .navbar-link:hover {
+      color: var(--primary);
+    }
+
+    .navbar-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .navbar-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0.7;
+    }
+
+    .lang-btn.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .cta-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .cta-btn:hover {
+      background-color: #C20062;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.03) 10px,
+          rgba(255, 255, 255, 0.03) 20px
+        );
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(228, 0, 124, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 165, 200, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      padding: var(--spacing-2xl);
+      max-width: 800px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-address {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: var(--spacing-md);
+      letter-spacing: 1px;
+      opacity: 0.95;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: var(--spacing-md);
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-xl);
+      font-weight: 300;
+      opacity: 0.95;
+    }
+
+    .hero-price {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-lg);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-lg);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #C20062;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: 2px solid var(--white);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--white);
+      color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    /* Quick Facts Strip */
+    .quick-facts {
+      background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 50%, #F8F8F8 100%);
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--spacing-lg);
+      max-width: 1400px;
+      margin: -80px auto 0;
+      position: relative;
+      z-index: 10;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .fact-item {
+      text-align: center;
+      padding: var(--spacing-md);
+    }
+
+    .fact-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .fact-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .fact-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* Features Section */
+    .features {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      background-color: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-2xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header h2 {
+      margin-bottom: var(--spacing-md);
+      color: var(--dark);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .feature-card h3 {
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Cottages Section */
+    .cottages {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+    }
+
+    .cottages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: var(--spacing-xl);
+    }
+
+    .cottage-card {
+      background-color: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .cottage-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .cottage-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #E4007C 0%, #FFA5C8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--white);
+    }
+
+    .cottage-content {
+      padding: var(--spacing-lg);
+    }
+
+    .cottage-card h3 {
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark);
+    }
+
+    .cottage-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.6;
+    }
+
+    .cottage-income {
+      background-color: rgba(228, 0, 124, 0.1);
+      color: var(--primary);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Area/Location Section */
+    .location {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      background-color: var(--white);
+    }
+
+    .location-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+      align-items: center;
+    }
+
+    .location-text h2 {
+      margin-bottom: var(--spacing-md);
+      color: var(--dark);
+    }
+
+    .location-text p {
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+    }
+
+    .location-highlights {
+      list-style: none;
+      margin-top: var(--spacing-lg);
+    }
+
+    .location-highlights li {
+      padding: var(--spacing-sm) 0;
+      padding-left: var(--spacing-lg);
+      position: relative;
+      color: var(--text-light);
+    }
+
+    .location-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+    }
+
+    .contact-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+    }
+
+    .contact-info {
+      background-color: var(--white);
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .agent-profile {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .agent-avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #E4007C 0%, #FFA5C8 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto var(--spacing-md);
+      color: var(--white);
+    }
+
+    .contact-info h3 {
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark);
+    }
+
+    .contact-detail {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-light);
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--dark);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-detail a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      background-color: var(--white);
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form h3 {
+      margin-bottom: var(--spacing-lg);
+      color: var(--dark);
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      color: var(--text);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(228, 0, 124, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-submit:hover {
+      background-color: #C20062;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-section h4 {
+      margin-bottom: var(--spacing-md);
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: var(--spacing-lg);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(228, 0, 124, 0.2);
+      border-radius: 50%;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .quick-facts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+      }
+
+      .features-grid,
+      .cottages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .location-content,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        margin-top: 60px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="navbar-brand" data-i18n="brand">MÄKLARHUSET</a>
+
+      <ul class="navbar-menu">
+        <li><a href="#features" class="navbar-link" data-i18n="nav.features">Features</a></li>
+        <li><a href="#cottages" class="navbar-link" data-i18n="nav.cottages">Cottages</a></li>
+        <li><a href="#location" class="navbar-link" data-i18n="nav.location">Location</a></li>
+        <li><a href="#contact" class="navbar-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="language-selector">
+          <button class="lang-btn active" data-lang="sv" title="Svenska">🇸🇪</button>
+          <button class="lang-btn" data-lang="de" title="Deutsch">🇩🇪</button>
+          <button class="lang-btn" data-lang="nl" title="Nederlands">🇳🇱</button>
+          <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+        </div>
+        <a href="#contact" class="cta-btn" data-i18n="nav.contact_cta">Kontakta oss</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-address" data-i18n="hero.address">Malmvägen 1, Ädelfors</p>
+        <h1 class="hero-title" data-i18n="hero.title">Klassisk Herrgård</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Historisk charm möter moderna bekvämligheter</p>
+        <div class="hero-price" data-i18n="hero.price">8,995,000 SEK</div>
+        <div class="hero-buttons">
+          <button class="btn-primary" data-i18n="hero.btn_inquiry">Intresseanmälan</button>
+          <button class="btn-secondary" data-i18n="hero.btn_tour">Boka Visning</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Facts Strip -->
+    <section class="quick-facts">
+      <div class="fact-item">
+        <div class="fact-icon">📐</div>
+        <div class="fact-value" data-i18n="facts.size">365 m²</div>
+        <div class="fact-label" data-i18n="facts.size_label">Bostadsyta</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">🚪</div>
+        <div class="fact-value" data-i18n="facts.rooms">9</div>
+        <div class="fact-label" data-i18n="facts.rooms_label">Rum</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">🏞️</div>
+        <div class="fact-value" data-i18n="facts.plot">4,505 m²</div>
+        <div class="fact-label" data-i18n="facts.plot_label">Tomt</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">📅</div>
+        <div class="fact-value" data-i18n="facts.built">1750</div>
+        <div class="fact-label" data-i18n="facts.built_label">Byggnadsår</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">💰</div>
+        <div class="fact-value" data-i18n="facts.costs">~2,500 kr</div>
+        <div class="fact-label" data-i18n="facts.costs_label">Årlig kostnad</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">💎</div>
+        <div class="fact-value" data-i18n="facts.price_per_sqm">~24,657 kr</div>
+        <div class="fact-label" data-i18n="facts.price_per_sqm_label">Pris/m²</div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="section-header">
+        <h2 data-i18n="features.title">Exklusiva Egenskaper</h2>
+        <p data-i18n="features.subtitle">Denna klassiska herrgård kombinerar traditioner med moderna bekvämligheter</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3 data-i18n="features.heating">Golvvärme</h3>
+          <p data-i18n="features.heating_desc">Modernt värmesystem med golvvärme i huvudbyggnaden för maximal komfort</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏛️</div>
+          <h3 data-i18n="features.fireplace">Öppen Spis</h3>
+          <p data-i18n="features.fireplace_desc">Autentisk öppen spis i huvudsalong för traditionell varmth</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3 data-i18n="features.internet">Fiber Internet</h3>
+          <p data-i18n="features.internet_desc">Höghastighets fiberanslutning för modernt hemarbete och underhållning</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3 data-i18n="features.renovated">Renoverad</h3>
+          <p data-i18n="features.renovated_desc">Omsorgsfullt restaurerad samtidigt som originaloron bevarades</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🍳</div>
+          <h3 data-i18n="features.kitchen">Stor Kök</h3>
+          <p data-i18n="features.kitchen_desc">Modernt utstyrt kök med traditionell karaktär och ytor för matlagning</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🍷</div>
+          <h3 data-i18n="features.cellar">Vinkällare</h3>
+          <p data-i18n="features.cellar_desc">Källare med perfekta förhållanden för vinlagring och konservering</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cottages Section -->
+    <section class="cottages" id="cottages">
+      <div class="section-header">
+        <h2 data-i18n="cottages.title">Gäststugor & Inkomst</h2>
+        <p data-i18n="cottages.subtitle">Tre charmerande stugor för gäster eller semesteruthyrning</p>
+      </div>
+
+      <div class="cottages-grid">
+        <article class="cottage-card">
+          <div class="cottage-image">🏠</div>
+          <div class="cottage-content">
+            <h3 data-i18n="cottages.cottage1_title">Husarstugan</h3>
+            <p data-i18n="cottages.cottage1_desc">Autentisk stuga med härlig eldstad och traditionell inredning. Perfekt för 4-6 gäster med egen kök och badrum.</p>
+            <div class="cottage-income" data-i18n="cottages.income_estimate">~120,000 kr/år hyresintäkt</div>
+          </div>
+        </article>
+
+        <article class="cottage-card">
+          <div class="cottage-image">🌲</div>
+          <div class="cottage-content">
+            <h3 data-i18n="cottages.cottage2_title">Björkstugan</h3>
+            <p data-i18n="cottages.cottage2_desc">Charmig stuga omgiven av björkar. Hemtrevlig atmosfär med två sovrum och modern komfort. Idealisk för familjer.</p>
+            <div class="cottage-income" data-i18n="cottages.income_estimate">~120,000 kr/år hyresintäkt</div>
+          </div>
+        </article>
+
+        <article class="cottage-card">
+          <div class="cottage-image">🌲</div>
+          <div class="cottage-content">
+            <h3 data-i18n="cottages.cottage3_title">Skogsstugan</h3>
+            <p data-i18n="cottages.cottage3_desc">Lugn och vacker stuga djupt inne i skogen. Utmärkt för avkoppling med vacker naturöversikt och egen terrass.</p>
+            <div class="cottage-income" data-i18n="cottages.income_estimate">~120,000 kr/år hyresintäkt</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+      <div class="location-content">
+        <div class="location-text">
+          <h2 data-i18n="location.title">Ädelfors - Guldkusten</h2>
+          <p data-i18n="location.description">Ädelfors ligger i hjärtat av Guldkusten, en historisk region känd för sin guld och naturlig skönhet. Denna klassiska herrgård är belägen i en idyllisk miljö med närhet till natur och friluftsliv.</p>
+
+          <p data-i18n="location.attractions">Området erbjuder unika attraktioner som guldpaning, historiska stigar och vacker landsbygdsmiljö. Samtidigt har du god tillgång till moderna bekvämligheter och tjänster.</p>
+
+          <ul class="location-highlights">
+            <li data-i18n="location.highlight1">Guldpaning och historiska attraktioner</li>
+            <li data-i18n="location.highlight2">Naturskön omgivning med vandringsleder</li>
+            <li data-i18n="location.highlight3">Lantlig atmosfär med tillgång till modern infrastruktur</li>
+            <li data-i18n="location.highlight4">Närhet till See och vattenvyer</li>
+          </ul>
+        </div>
+
+        <div class="map-placeholder">🗺️</div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="agent-profile">
+            <div class="agent-avatar">👨‍💼</div>
+            <h3 data-i18n="contact.agent_name">Albin Sköld</h3>
+            <p style="color: var(--text-light); margin-bottom: var(--spacing-sm);" data-i18n="contact.agent_title">Fastighetsmäklare</p>
+          </div>
+
+          <div class="contact-detail">
+            <strong data-i18n="contact.phone">Telefon</strong>
+            <a href="tel:+46701234567">+46 70 123 45 67</a>
+          </div>
+
+          <div class="contact-detail">
+            <strong data-i18n="contact.email">E-post</strong>
+            <a href="mailto:albin.skold@maklarhuset.se">albin.skold@maklarhuset.se</a>
+          </div>
+
+          <div class="contact-detail">
+            <strong data-i18n="contact.office">Kontor</strong>
+            Mäklarhuset Växjö<br>
+            <span data-i18n="contact.office_address">Växjö, Sverige</span>
+          </div>
+
+          <div class="contact-detail">
+            <strong data-i18n="contact.hours">Öppettider</strong>
+            <span data-i18n="contact.hours_info">Mån-Fre 09:00-17:00</span>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <h3 data-i18n="contact.form_title">Intresseanmälan</h3>
+
+          <div class="form-group">
+            <label for="name" data-i18n="contact.form_name">Namn</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" data-i18n="contact.form_email">E-post</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" data-i18n="contact.form_phone">Telefonnummer</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="contact.form_message">Meddelande</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" data-i18n="contact.form_submit">Skicka Anmälan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4 data-i18n="footer.company">Mäklarhuset</h4>
+        <p data-i18n="footer.company_desc">Skandinaviens ledande fastighetsmäklarföretag med expertise inom exklusiva fastigheter.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-i18n="footer.quick_links">Snabblänkar</h4>
+        <a href="#features" data-i18n="footer.link_features">Egenskaper</a><br>
+        <a href="#cottages" data-i18n="footer.link_cottages">Stugor</a><br>
+        <a href="#location" data-i18n="footer.link_location">Plats</a><br>
+        <a href="#contact" data-i18n="footer.link_contact">Kontakt</a>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-i18n="footer.info">Information</h4>
+        <a href="#" data-i18n="footer.about">Om oss</a><br>
+        <a href="#" data-i18n="footer.privacy">Integritetspolicy</a><br>
+        <a href="#" data-i18n="footer.terms">Användarvillkor</a><br>
+        <a href="#" data-i18n="footer.contact_general">Kontakta oss</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2024 Mäklarhuset. Alla rättigheter förbehållna.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Language selector
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Language change logic would be implemented in app.js
+      });
+    });
+
+    // Form submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Form submission logic would be implemented in app.js
+      alert('Tack för din intresseanmälan! Vi kontaktar dig snart.');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
