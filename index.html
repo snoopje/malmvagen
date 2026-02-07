@@ -18,10 +18,10 @@
   <!-- Navigation Header -->
   <header class="site-header">
     <div class="container">
-      <div class="header-content">
-        <div class="logo">Mäklarhuset</div>
+      <div class="navbar">
+        <a class="nav-logo" href="#home">Mäklarhuset</a>
 
-        <nav class="nav-menu">
+        <nav class="nav-links">
           <a href="#home" class="nav-link" data-i18n="nav.home">Hem</a>
           <a href="#quickfacts" class="nav-link" data-i18n="nav.property">Fastigheten</a>
           <a href="#features" class="nav-link" data-i18n="nav.features">Egenskaper</a>
@@ -30,19 +30,22 @@
           <a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
         </nav>
 
-        <div class="lang-selector">
-          <label data-i18n="nav.langLabel">Språk:</label>
-          <div class="lang-buttons">
+        <div class="nav-actions">
+        <div class="language-selector">
             <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
             <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
             <button class="lang-btn" data-lang="nl">🇳🇱 NL</button>
             <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
-          </div>
         </div>
 
         <button class="nav-toggle">
-          <span class="hamburger"></span>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
+        </div>
       </div>
     </div>
   </header>
